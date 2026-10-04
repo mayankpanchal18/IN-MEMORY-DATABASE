@@ -2,11 +2,6 @@ import json
 
 database = {}
 
-try:
-    with open("data.json", "r") as file:
-        database = json.load(file)
-except FileNotFoundError:
-    pass
 
 while True:
     user = input("db> ").strip()
