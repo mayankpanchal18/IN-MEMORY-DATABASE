@@ -2,6 +2,13 @@ import json
 
 database = {}
 
+try:
+    with open("data.json", "r") as file:
+        database = json.load(file)
+except FileNotFoundError:
+    pass
+except json.JSONDecodeError:
+    print("data.json is not valid JSON. Starting with an empty database.")
 
 while True:
     user = input("db> ").strip()
